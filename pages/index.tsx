@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Banner from '../components/Banner'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import LargeCard from '../components/LargeCard'
 import MediumCard from '../components/MediumCard'
@@ -49,6 +50,8 @@ const Home = ({ exploreData, cardData }: any) => {
           img="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
           title="The Graeate OutDoors"
         />
+
+        <Footer />
       </main>
     </div>
   )
@@ -60,13 +63,13 @@ export async function getStaticProps() {
   const exploreData = await fetch('https://www.jsonkeeper.com/b/4G1G').then(
     (res) => res.json()
   )
-  const cardData = await fetch('https://www.jsonkeeper.com/b/4G1G').then(
-    (res) => res.json()
-  )
+  // const cardData = await fetch('https://www.jsonkeeper.com/b/4G1G').then(
+  //   (res) => res.json()
+  // )
   return {
     props: {
       exploreData,
-      cardData,
+      cardData: exploreData,
     },
   }
 }
