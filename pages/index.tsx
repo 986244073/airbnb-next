@@ -35,7 +35,7 @@ const Home = ({ exploreData, cardData }: any) => {
 
         <section>
           <h2 className="py-8 text-4xl font-semibold">Live Anywhere</h2>
-          <div className="ml-3 flex  flex-row space-x-3 overflow-y-hidden p-4">
+          <div className="ml-3 flex  flex-row space-x-3 overflow-x-hidden p-4">
             {cardData?.map(({ img, location }: any) => (
               <MediumCard key={img} img={img} title={location} />
             ))}
