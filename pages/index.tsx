@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import Banner from '../components/Banner'
 import Header from '../components/Header'
+import LargeCard from '../components/LargeCard'
 import MediumCard from '../components/MediumCard'
 import SmallCard from '../components/SmallCard'
 
@@ -35,12 +36,19 @@ const Home = ({ exploreData, cardData }: any) => {
 
         <section>
           <h2 className="py-8 text-4xl font-semibold">Live Anywhere</h2>
-          <div className="ml-3 flex  flex-row space-x-3 overflow-x-hidden p-4">
+          <div className="-ml-3 flex h-full space-x-3 overflow-scroll p-3 scrollbar-hide">
             {cardData?.map(({ img, location }: any) => (
               <MediumCard key={img} img={img} title={location} />
             ))}
           </div>
         </section>
+
+        <LargeCard
+          buttonText="去吧"
+          description="wishlists"
+          img="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
+          title="The Graeate OutDoors"
+        />
       </main>
     </div>
   )
